@@ -4,7 +4,13 @@
 *    2.7 - Loading external data
 */
 
-d3.json("/data/ages.json").then(data => {
+
+// d3.csv("/2.07/data/ages.csv").then(data => {
+// 	console.log(data)
+// 	})
+
+d3.json("/2.07/data/ages.json").then(data => {
+	console.log(data)
 	data.forEach(d => {
 		d.age = Number(d.age)
 	})
