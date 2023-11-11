@@ -19,7 +19,7 @@ d3.json("/2.07/data/ages.json").then(data => {
 		.attr("width", 400)
 		.attr("height", 400)
 
-	const circles = svg.selectAll("circle")
+	const circles = svg.selectAll("circle") //adding multiple SVGs to the screen at once
 		.data(data)
 
 	circles.enter().append("circle")
