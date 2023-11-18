@@ -15,7 +15,7 @@ d3.json("data/buildings.json").then(data => {
 
   const x = d3.scaleBand()
     .domain(["Burj Khalifa", "Shanghai Tower", 
-      "Abraj Al-Bait Clock Tower", "Ping An Finance Centre", "Lotte World Tower", "One World Trade Center", "CTF Finance Centre", "Coltejer", "Colpatria", "Bacatá"])
+      "Abraj Al-Bait Clock Tower", "Ping An Finance Centre", "Lotte World Tower", "One World Trade Center", "CTF Finance Centre", "Bacatá", "Colpatria", "Coltejer"])
     .range([0, 400])
     .paddingInner(0.3) //Defines how much space I want to have within rectangles
     .paddingOuter(0.2)
@@ -32,5 +32,19 @@ d3.json("data/buildings.json").then(data => {
     .attr("x", (d) => x(d.name))
     .attr("width", x.bandwidth)
     .attr("height", d => y(d.height))
-    .attr("fill", "grey")
+    // .attr("fill", "grey")
+    .attr("fill", d => {
+      if (d.name === "Bacatá") {
+        return "yellow"
+      }
+      else if (d.name === "Colpatria") {
+        return "blue"
+      }
+      else if (d.name === "Coltejer") {
+        return "red"
+      }
+      else {
+        return "grey"
+      }
+    })
 })
