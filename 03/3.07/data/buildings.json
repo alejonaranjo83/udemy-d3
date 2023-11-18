@@ -26,5 +26,17 @@
 	{
 		"name": "CTF Finance Centre",
 		"height": "530"
+	},
+	{
+		"name": "Bacatá" ,
+		"height": 216
+	},
+	{
+		"name": "Colpatria" ,
+		"height": 196
+	},
+	{
+		"name": "Coltejer" ,
+		"height": 175
 	}
 ]

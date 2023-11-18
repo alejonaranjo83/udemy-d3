@@ -14,13 +14,13 @@ d3.json("data/buildings.json").then(data => {
   })
 
   const x = d3.scaleBand()
-    .domain(data.map(d => d.name))
+    .domain(data.map(d => d.name)) //knowing how many items does the data file has through an array of the building names
     .range([0, 400])
     .paddingInner(0.3)
     .paddingOuter(0.2)
   
   const y = d3.scaleLinear()
-    .domain([0, d3.max(data, d => d.height)])
+    .domain([0, d3.max(data, d => d.height)]) //adjusting the maximum value according to the the height value attribute in data
     .range([0, 400])
 
   const rects = svg.selectAll("rect")
